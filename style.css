@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-black: hsl(0, 0%, 7%);
+  --clr-purple1: hsl(263, 55%, 52%);
+  --clr-purple2: hsl(264, 82%, 80%);
+  --clr-purple3: hsl(260, 100%, 95%);
+  --clr-blue: hsl(219, 29%, 14%);
+  --clr-grey1: hsl(217, 19%, 35%);
+  --clr-grey2: hsl(224, 10%, 45%);
+  --clr-grey3: hsl(0, 0%, 81%);
+  --clr-grey4: hsl(214, 17%, 92%);
+  --font-size: 13px;
+  --border-radius: 0.5rem;
+  --box-shadow: 3rem 3rem 1.5rem hsla(224, 10%, 45%, 0.2);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size);
+  background-color: var(--clr-grey3);
+}
+
+body {
+  font-family: "Barlow Semi Condensed";
+  display: grid;
+  /* place-items: center; */
+  font-weight: 500;
+}
+
+.main {
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-rows: 1fr;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 0.25rem solid var(--clr-purple2);
+  float: left;
+  margin-right: 1rem;
+}
+
+.card {
+  border-radius: var(--border-radius);
+  background-color: var(--clr-white);
+  color: var(--clr-grey2);
+  box-shadow: var(--box-shadow);
+  padding: clamp(1.75rem, 2vw, 2rem);
+}
+
+.name,
+.key-point {
+  font-weight: 600;
+}
+
+.key-point {
+  margin: 1rem 0;
+}
+
+.card-light {
+  background-color: var(--clr-white);
+  color: var(--clr-grey2);
+}
+
+.card-dark {
+  color: var(--clr-grey3);
+}
+
+.card-1 {
+  background-color: var(--clr-purple1);
+  color: var(--clr-grey4);
+}
+
+.card-2 {
+  background-color: var(--clr-grey1);
+}
+
+.card-4 {
+  background-color: var(--clr-blue);
+}
+
+@media screen and (min-width: 678px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    gap: 0.5rem;
+    justify-content: start;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .main {
+    max-width: 70vw;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+      "a a b e"
+      "c d d e"
+    ;
+  }
+
+  .card-1 {
+    grid-area: a;
+  }
+
+  .card-2 {
+    grid-area: b;
+  }
+
+  .card-3 {
+    grid-area: c;
+  }
+
+  .card-4 {
+    grid-area: d;
+  }
+
+  .card-5 {
+    grid-area: e;
+  }
+}
