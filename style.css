@@ -31,14 +31,15 @@ html {
 
 body {
   font-family: "Barlow Semi Condensed";
-  display: grid;
-  /* place-items: center; */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 500;
+
 }
 
 .main {
-  justify-self: center;
-  align-self: center;
   display: grid;
   grid-template-rows: 1fr;
   padding: 2rem;
