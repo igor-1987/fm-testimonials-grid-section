@@ -11,7 +11,8 @@
   --clr-grey2: hsl(224, 10%, 45%);
   --clr-grey3: hsl(0, 0%, 81%);
   --clr-grey4: hsl(214, 17%, 92%);
-  --font-size: 13px;
+  --font-size: 0.81rem;
+  --font-family: "Barlow Semi Condensed", Helvetica, sans-serif;
   --border-radius: 0.5rem;
   --box-shadow: 3rem 3rem 1.5rem hsla(224, 10%, 45%, 0.2);
 }
@@ -24,13 +25,8 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: var(--font-size);
-  background-color: var(--clr-grey3);
-}
-
 body {
-  font-family: "Barlow Semi Condensed";
+  font-family: var(--font-family);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -117,7 +113,7 @@ body {
     max-width: 70vw;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: 
+    grid-template-areas:
       "a a b e"
       "c d d e"
     ;
