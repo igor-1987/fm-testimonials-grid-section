@@ -12,9 +12,10 @@
   --clr-grey3: hsl(0, 0%, 81%);
   --clr-grey4: hsl(214, 17%, 92%);
   --font-size: 0.81rem;
-  --font-family: "Barlow Semi Condensed", Helvetica, sans-serif;
+  --font-family: "Barlow Semi Condensed",Helvetica,sans-serif;
   --border-radius: 0.5rem;
-  --box-shadow: 5rem 5rem 1.5rem hsla(224, 10%, 45%, 0.2);
+  --box-shadow: 5rem 5rem 3rem hsla(224, 10%, 45%, 0.2);
+  --transition: all 0.3s linear;
 }
 
 *,
@@ -26,14 +27,13 @@
 }
 
 body {
-  background-color: var(--clr-white);
+  font-size: var(--font-size);
   font-family: var(--font-family);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 500;
-
 }
 
 .main {
@@ -58,6 +58,13 @@ body {
   color: var(--clr-grey2);
   box-shadow: var(--box-shadow);
   padding: clamp(1.75rem, 2vw, 2rem);
+  cursor: pointer;
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: scale(1.02);
 }
 
 .name,
@@ -89,6 +96,12 @@ body {
 
 .card-4 {
   background-color: var(--clr-blue);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
 }
 
 @media screen and (min-width: 678px) {
